@@ -1,0 +1,55 @@
+{% load static %}
+    <form id="search_form" action="{% url 'search' %}" method="get">
+            {% if not weather %}
+                <label for="q" id="label_search">Поиск Погоды</label>
+                <input placeholder="Название Города" name="q" id="label_input">
+                <button type="submit" id="search_bt">Найти</button>
+            {% else %}
+
+                <a href="{{weather.get_absolute_urls}}" class="more_page">
+                    <h2 class="place_region">{{weather}},  {{weather.country}} {{weather.region}}</h2>
+                    <h3 class="time">{{time}}</h3>
+                    {% if weather.temp >= 0 %}
+                        <h1 class="temp">+{{weather.temp}}</h1>
+                    {% else %}
+                        <h1 class="temp">{{weather.temp}}</h1>
+                    {% endif %}
+
+                    {% if time2 < if_time and time2 > night or time2 >= afternoon  %}
+                        {% if weather.descriprion == 'Лёгкий снег' or weather.descriprion == 'Снег' or weather.descriprion == 'Небольшой снег' or weather.descriprion == 'Легкий Снегопад' or weather.descriprion == 'Лёёгкий снегопад' or weather.descriprion == 'Снегопад' or weather.descriprion == "Умеренный снег" or weather.descriprion == "Умеренный или сильный снег" or weather.descriprion == "Возможны патчи снег"%}
+                            <img src="{% static 'weather/media/луна_со_снегом.png' %}" height="200px" class="images">
+                        {% elif weather.descriprion == 'Пасмурная погода' or weather.descriprion == 'Облачно' or weather.descriprion == 'Частично облачно'%}
+                            <img src="{% static 'weather/media/пасмурная луна-transformed.png' %}" height="200px" class="images">
+                        {% elif weather.descriprion == 'Солнечно' or weather.descriprion == 'Очистить' %}
+                            <img src="{% static 'weather/media/луна.png' %}" height="200px" class="images">
+                        {% elif weather.descriprion == 'Моросящий дождик' or weather.descriprion == 'Небольшой дождь' or weather.descriprion == 'Лёгкий дождь' or weather.descriprion == 'Умеренный дождь' or weather.descriprion == 'Возможны патчи-дожди' or weather.descriprion == 'Светлый' or weather.descriprion == 'Умеренный или сильный ливень' or weather.descriprion == "Проливной дождь" or weather.descriprion == "Ливень" %}
+                            <img src="{% static 'weather/media/луна с дождём.png' %}" height="200px" class="images">
+                        {% endif %}
+                    {% else %}
+                        {% if weather.descriprion == 'Пасмурная погода' or weather.descriprion == 'Облачно' %}
+                            <img src="{% static 'weather/media/overcast.png' %}" height="200px" class="images">
+                        {% elif weather.descriprion == 'Моросящий дождик' or weather.descriprion == 'Небольшой дождь' or weather.descriprion == 'Лёгкий дождь' or weather.descriprion == 'Умеренный дождь' or weather.descriprion == 'Возможны патчи-дожди' or weather.descriprion == 'Светлый' or weather.descriprion == 'Умеренный или сильный ливень' or weather.descriprion == "Проливной дождь" or weather.descriprion == "Ливень" %}
+                            <img src="{% static 'weather/media/rain.png' %}" class="images" height="200px">
+                        {% elif weather.descriprion == 'Солнечно' or weather.descriprion == 'Очистить'%}
+                            <img src="{% static 'weather/media/sunny.png' %}" height="200px" class="images">
+                        {% elif weather.descriprion == 'Туман' %}
+                            <img src="{% static 'weather/media/туман.png' %}" height="200px" class="images">
+                        {% elif weather.descriprion == 'Лёгкий снег' or weather.descriprion == 'Снег' or weather.descriprion == 'Небольшой снег' or weather.descriprion == 'Легкий Снегопад' or weather.descriprion == 'Лёёгкий снегопад' or weather.descriprion == 'Снегопад' or weather.descriprion == "Умеренный снег" or weather.descriprion == "Умеренный или сильный снег" or weather.descriprion == "Возможны патчи снег"%}
+                            <img src="{% static 'weather/media/snowy.png' %}" height="200px" class="images">
+                        {% elif weather.descriprion == 'Частично облачно'%}
+                            <img src="{% static 'weather/media/partly_cloudy-.png' %}" height="200px" class="images">
+                        {% endif %}
+                    {% endif %}
+                    {% if weather.descriprion == 'Очистить' %}
+                        <h2 class="description">Чисто</h2>
+
+                    {% elif weather.descriprion == 'Светлый' %}
+                        <h2 class="description">Лёгкая морось</h2>
+                    {% else %}
+                        <h2 class="description">{{weather.descriprion}}</h2>
+                    {% endif %}
+
+                </a>
+            {% endif %}
+
+</form>

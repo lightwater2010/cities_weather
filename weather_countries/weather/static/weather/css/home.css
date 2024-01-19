@@ -1,0 +1,73 @@
+#search_form{
+    background:#B8B8B8;
+    box-shadow:3px 3px 4px 3px black;
+    position:relative;
+    left:35%;
+    text-align:center;
+    height:400px;
+    width:30%;
+    border-radius:20px;
+    top:250px;
+    transition:2s;
+
+}
+#label_search,#label_input{
+    position:relative;
+    top:50px;
+    font-size:1.5em;
+    border-radius:15px;
+    border:none;
+}
+#search_bt{
+    position:relative;
+    top:50px;
+    font-size:1.3em;
+    border-radius:5px;
+    border:none;
+    box-shadow:1px 1px 1px black;
+    transition:1s;
+}
+#search_bt:hover{
+    font-size:1.5em;
+}
+.name_place{
+    position:relative;
+    font-size:2.4em;
+
+
+}
+.place_region{
+    position:relative;
+    border:1px solid white;
+    box-shadow:0.7px 0.7px 0.7px 0.7px white;
+    border-radius:4px;
+    background: #509EC3;
+    text-align:center;
+    font-size:2em;
+}
+.temp{
+    font-size:5em;
+    position:relative;
+    right:100px;
+}
+.description{
+    position:relative;
+    bottom:260px;
+}
+img{
+    position:relative;
+    bottom:230px;
+    left:100px;
+
+}
+
+.more_page{
+    text-decoration:none;
+    color:black;
+}
+#search_form:hover{
+    box-shadow:3px 3px 4px 3px white;
+}
+.time{
+    font-size:2em;
+}

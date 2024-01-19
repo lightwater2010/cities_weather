@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{title}}{% endblock %}
+{% block linking %}<link rel="stylesheet" href="{% static 'weather/css/home.css' %}">{% endblock %}
+{% block content %}
+{% if weather != 'Такого города нет!' %}
+    {% include 'weather/form.html' %}
+{% else %}
+    <h1>{{weather}}</h1>
+{% endif %}
+{% endblock %}

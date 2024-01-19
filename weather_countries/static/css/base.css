@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai&family=Heebo:wght@400;500&family=Lilita+One&family=Merriweather:wght@900&family=Mukta:wght@500&family=Philosopher&family=Roboto:wght@500&family=Rubik:ital,wght@0,500;1,500&family=Sawarabi+Gothic&display=swap');
+body{
+    margin:0;
+    padding:0;
+    background:url('https://foni.club/uploads/posts/2023-02/1675559424_foni-club-p-fon-krasivii-pogodi-1.png') no-repeat;
+}
+html{
+    font-family: 'Almarai', sans-serif;
+    font-family: 'Heebo', sans-serif;
+    font-family: 'Lilita One', cursive;
+    font-family: 'Merriweather', serif;
+    font-family: 'Mukta', sans-serif;
+    font-family: 'Philosopher', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif;
+    font-family: 'Sawarabi Gothic', sans-serif;
+}
+#header_a{
+    font-size:3.3em;
+    text-shadow:3px 4px grey;
+    transition:1s;
+    text-decoration:none;
+    color:black;
+}
+#header{
+    box-shadow:2px 2px 2px 2px black;
+    height:100px;
+    position:relative;
+    bottom:10px;
+    background:#A3CBEC;
+}
+#header_a:hover{
+    color:#0068AD;
+    text-shadow:3px 4px black;
+}

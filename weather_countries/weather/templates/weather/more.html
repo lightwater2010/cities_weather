@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{title}}{% endblock %}
+{% block linking %}<link rel="stylesheet" href="{% static 'weather/css/more.css' %}">{% endblock %}
+{% block styles %}
+{% if time2 < if_time and time2 > night %}
+    #search_form{
+            background:url('https://png.pngtree.com/thumb_back/fw800/background/20191021/pngtree-mountain-night-landscape-image_320308.jpg') no-repeat;
+            background-size:1000px;
+    }
+    .temp{
+        color:white;
+    }
+    .description{
+        color:white;
+        position:relative;
+        bottom:150px;
+    }
+    .time{
+        color:white;
+    }
+{% elif time2 >= if_time and time2 < if_time2 %}
+    #search_form{
+        background:url('https://bogatyr.club/uploads/posts/2023-03/thumbs/1678379652_bogatyr-club-p-voskhod-solntsa-fon-foni-pinterest-75.jpg') no-repeat;
+        background-size:800px;
+    }
+{% elif time2 >= if_time2 and time2 < afternoon %}
+    #search_form{
+        background:url('https://celes.club/pictures/uploads/posts/2023-05/1685189652_celes-club-p-solnechnii-den-risunok-risunok-1.jpg') no-repeat;
+        background-size:800px;
+    }
+{% elif time2 > afternoon and time2 < evening  %}
+    #search_form{
+        background:url('https://bogatyr.club/uploads/posts/2023-03/thumbs/1679483954_bogatyr-club-p-vechernee-nebo-foni-oboi-3.jpg') no-repeat;
+        background-size:800px;
+    }
+    .temp{
+        color:white;
+    }
+    .description{
+        color:white;
+        position:relative;
+        bottom:150px;
+    }
+    .time{
+        color:white;
+    }
+{% endif %}
+{% endblock %}
+{% block content %}
+    {% include 'weather/form.html' %}
+    <ul class="info">
+        <li class="hr" >Влажность </li>
+        <li class="hr" >Скорость ветра в км/ч </li>
+        <li class="hr">Скорость ветра в мил/час </li>
+    </ul>
+    <ul class="info2">
+        <li class="hr2">{{weather.humidity}}%</li>
+        <li class="hr2" id="wind_kph" >{{weather.wind_speed_kph}} км/час</li>
+        <li class="hr2" id="wind_mph">{{weather.wind_speed_mph}} мил/час</li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,90 @@
+#search_form{
+
+    box-shadow:3px 3px 4px 3px black;
+    position:relative;
+    left:30%;
+    text-align:center;
+    height:500px;
+    width:40%;
+    border-radius:20px;
+    top:250px;
+    transition:2s;
+
+}
+.name_place{
+    position:relative;
+    font-size:2.4em;
+}
+.place_region{
+    position:relative;
+    border:1px solid white;
+    box-shadow:0.7px 0.7px 0.7px 0.7px white;
+    border-radius:4px;
+    background: #509EC3;
+    text-align:center;
+    font-size:2em;
+}
+.description{
+    position:absolute;
+    bottom:260px;
+}
+img{
+    position:relative;
+    bottom:120px;
+    left:100px;
+
+}
+.temp{
+    position:relative;
+    right:100px;
+    top:50px;
+    font-size:3em;
+}
+.description{
+    position:relative;
+    bottom:170px;
+}
+.more_page{
+    text-decoration:none;
+    color:black;
+}
+.time{
+    font-size:2em;
+}
+#search_form:hover{
+    box-shadow:3px 3px 4px 3px white;
+}
+.info{
+    background:#509EC3;
+    width:38%;
+    height:80px;
+    border:2px solid white;
+    border-radius:10px;
+    position:relative;
+    top:150px;
+    left:570px;
+}
+.info .hr{
+    display:inline;
+    margin-left:40px;
+    font-weight: bolder;
+    font-size:1.2em;
+}
+.info2 .hr2{
+    display:inline;
+    margin-left:20px;
+    font-weight: bolder;
+    position:relative;
+    font-size:1.2em;
+    top:100px;
+    left:400px;
+    left:610px;
+}
+#wind_mph{
+    position:relative;
+    left:850px;
+}
+#wind_kph{
+    position:relative;
+    left:720px;
+}
