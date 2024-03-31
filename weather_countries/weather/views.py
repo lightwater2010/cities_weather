@@ -63,7 +63,7 @@ class Search(DetailView,Translator):
             gust_kph = responce['current']['gust_kph']
             gust_mph = responce['current']['gust_mph']
             name2 = translater2.translate(name)
-            if name.lower() == 'илулисcат':
+            if name.lower() == 'илулисcат': #сделал потому что то с этим городом не то было
                 name2 = 'ilulissat'
             Weather_Country.objects.create(name=name,region=region,country=country,temp=temp,descriprion=description2,icon_desc=icon_description,wind_speed_kph=wind_speed_kph,wind_speed_mph=wind_speed_mph,humidity=humidity,gust_kph=gust_kph,gust_mph=gust_mph,slug=slugify(name2))
             return Weather_Country.objects.get(name__istartswith=self.request.GET.get('q').title())
